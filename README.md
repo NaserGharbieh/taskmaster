@@ -3,9 +3,10 @@
 
 | Homepage | All Tasks |
 |:---:|:---:|
-| ![homepage](./screenshots/home.png) | ![alltasks](./screenshots/alltasks.png) |
+| ![homepage](./screenshots/home.png) | ![alltasks](./screenshots/AllTasks.png) |
 | Add Task | Added Task |
-| ![addtask](./screenshots/addtask.png) | ![addedtask](./screenshots/TaskAdded.png) |
+| ![addtask](./screenshots/AddTask.png) | ![addedtask](./screenshots/TaskAdded.png) |
+
 
 ## description
 Task master mobile application with three pages:
