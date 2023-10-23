@@ -7,4 +7,11 @@
     <string name="task_description">Task Description</string>
     <string name="add_task">Add Task</string>
     <string name="task_title">Task Title</string>
+    <string name="user_profile">User profile</string>
+    <string name="enter_your_user_name">Enter your user name</string>
+    <string name="add_username">Add Username</string>
+    <string name="study_dsa">study DSA</string>
+    <string name="_10_am_meeting">10 am Meeting</string>
+    <string name="java_tasks">java tasks</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada nibh sit amet massa fermentum, eget consequat sapien malesuada.</string>
 </resources>
