@@ -14,7 +14,13 @@
         android:theme="@style/Theme.TaskMaster"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.AddNewTaskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AllTasksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
