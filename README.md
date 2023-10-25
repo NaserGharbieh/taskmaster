@@ -3,7 +3,7 @@
 
 | Homepage | All Tasks |
 |:---:|:---:|
-| ![homepage](./screenshots/homelab27.png) | ![alltasks](./screenshots/AllTasks.png) |
+| ![homepage](./screenshots/homelab28.png) | ![alltasks](./screenshots/AllTasks.png) |
 | Add Task | Added Task |
 | ![addtask](./screenshots/AddTask.png) | ![addedtask](./screenshots/TaskAdded.png) |
 | user Settings | username Saved |
@@ -39,3 +39,8 @@ Task master mobile application with three pages:
  1. Add Task Details page with two text views: task title and task description. Task title is passed from intent in the main when the task button clicked.
 
  2. Add Users Settings page with: edit text for the username and a save button. The username is passed using Shared Preferences to the home page.
+
+- Lab28
+1. Added a RecyclerView for displaying Task title, the tasks are hardcoded.
+
+2. Created a Task class with attributes: title, body and state. The state is enum of type TaskState, and can be one of: “new”, “assigned”, “in progress”, or “complete”
