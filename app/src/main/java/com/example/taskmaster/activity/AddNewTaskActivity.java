@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.taskmaster.R;
+import com.example.taskmaster.database.TaskMasterDatabase;
 
 public class AddNewTaskActivity extends AppCompatActivity {
 
@@ -27,6 +28,13 @@ public class AddNewTaskActivity extends AppCompatActivity {
                 taskAddedToast.show();
             }
         });
+
+//        TaskMasterDatabase =Room.databaseBuilder(
+//                getApplicationContext(),
+//                TaskMasterDatabase.class,
+//                "add_more_tasks")
+//                .allowMainThreadQueries()
+//                .build();
 
     }
     @Override

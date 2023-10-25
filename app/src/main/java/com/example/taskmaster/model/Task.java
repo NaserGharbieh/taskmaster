@@ -1,6 +1,10 @@
 package com.example.taskmaster.model;
+import androidx.room.Entity;
 
+@Entity
 public class Task {
+    @PrimaryKey(autoGenerate = true)
+    public Long id;
     private String title;
     private String body;
     private TaskState state;
