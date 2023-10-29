@@ -8,7 +8,7 @@
     tools:context=".activity.AddNewTaskActivity">
 
     <TextView
-        android:id="@+id/myTaskstextView3"
+        android:id="@+id/myTaskstextView"
         android:layout_width="182dp"
         android:layout_height="44dp"
 
@@ -26,15 +26,15 @@
         android:id="@+id/addTaskButton"
         android:layout_width="147dp"
         android:layout_height="65dp"
+        android:layout_marginBottom="96dp"
         android:text="@string/add_task"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taskDescriptionTextView"
-        app:layout_constraintVertical_bias="0.325" />
+        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <MultiAutoCompleteTextView
         android:id="@+id/taskDescriptionTextView"
@@ -46,12 +46,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.474" />
+        app:layout_constraintVertical_bias="0.367" />
 
     <EditText
         android:id="@+id/taskNameEditText"
         android:layout_width="236dp"
         android:layout_height="57dp"
+        android:layout_marginBottom="44dp"
+        android:autofillHints="do it"
         android:ems="10"
         android:hint="@string/task_title"
         android:inputType="textPersonName"
@@ -59,8 +61,32 @@
         app:layout_constraintBottom_toTopOf="@+id/taskDescriptionTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/addTaskStateSpinner"
+        android:layout_width="312dp"
+        android:layout_height="82dp"
+        app:layout_constraintBottom_toTopOf="@+id/addTaskButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.641"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myTaskstextView3"
-        android:autofillHints="do it" />
+        app:layout_constraintTop_toBottomOf="@+id/addTasksTextView"
+        app:layout_constraintVertical_bias="0.41" />
+
+    <TextView
+        android:id="@+id/addTasksTextView"
+        android:layout_width="182dp"
+        android:layout_height="44dp"
+
+        android:text="@string/task_state"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.54" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

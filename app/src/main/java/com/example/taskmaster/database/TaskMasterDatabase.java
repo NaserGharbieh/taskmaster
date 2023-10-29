@@ -6,7 +6,7 @@ import androidx.room.TypeConverters;
 import com.example.taskmaster.dao.TaskDao;
 import com.example.taskmaster.model.Task;
 
-@Database(entities = {Task.class}, version = 2)
-public abstract class TaskMasterDatabase extends Roomdatabase {
+@Database(entities = {Task.class}, version = 1)
+public abstract class TaskMasterDatabase extends RoomDatabase {
 public abstract TaskDao taskDao();
 }

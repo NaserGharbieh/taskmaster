@@ -3,14 +3,17 @@
 
 | Homepage | All Tasks |
 |:---:|:---:|
-| ![homepage](./screenshots/homelab28.png) | ![alltasks](./screenshots/AllTasks.png) |
+| ![homepage](./screenshots/homelab29.png) | ![alltasks](./screenshots/AllTasks.png) |
 | Add Task | Added Task |
 | ![addtask](./screenshots/AddTask.png) | ![addedtask](./screenshots/TaskAdded.png) |
 | user Settings | username Saved |
 | ![user Settings](./screenshots/userSettings.png) | ![userName Saved](./screenshots/userNameSaved.png) |
 | Select task from Homepage | Task Details |
-| ![Task Selected](./screenshots/TaskSelected.png) | ![Task Details](./screenshots/TaskDetails.png) |
+| ![Task Selected](./screenshots/homelab29.png) | ![Task Details](./screenshots/TaskDetailslab29.png) |
 
+| RoomDbWorking |
+|:---:| 
+| ![Task Selected](./screenshots/RoomDbWorking.png) |
 
 ## description
 Task master mobile application with three pages:
@@ -32,7 +35,8 @@ Task master mobile application with three pages:
 
 5. Task details page:
   - task title based on the clicked task.
-  - lorem task description.
+  - task description.
+  - task state.
 
 ## daily change log
 - Lab27
@@ -44,3 +48,8 @@ Task master mobile application with three pages:
 1. Added a RecyclerView for displaying Task title, the tasks are hardcoded.
 
 2. Created a Task class with attributes: title, body and state. The state is enum of type TaskState, and can be one of: “new”, “assigned”, “in progress”, or “complete”
+
+- Lab29
+1. Set up Room, and modify Task class to be an Entity.
+2. Modify Add Task form to save the data entered in as a Task in local database.
+3. Refactor homepage RecyclerView to display all Task entities from database.

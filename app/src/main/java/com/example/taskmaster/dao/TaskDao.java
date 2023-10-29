@@ -7,18 +7,18 @@ import com.example.taskmaster.model.Task;
 
 import java.util.List;
 
-@DAO
+@Dao
 public interface  TaskDao {
     @Insert
-    public void insertAProduct(Task task);
+    public void insertATask(Task task);
 
-    @Query("select * from Product")
+    @Query("select * from Task")
     public List<Task> findAll();
 
-    @Query("select * from Product ORDER BY name ASC")
-    public List<Task> findAllSortedByName();
+    @Query("select * from Task ORDER BY title ASC")
+    public List<Task> findAllSortedByTitle();
 
-    @Query("select * from Product where id = :id")
-    Product findByAnId(long id);
+    @Query("select * from Task where id = :id")
+    Task findByAnId(long id);
 }
-}
+

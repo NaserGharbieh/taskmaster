@@ -13,6 +13,8 @@ import com.example.taskmaster.R;
 public class TaskDetailsActivity extends AppCompatActivity {
     TextView taskTitle;
     String taskTitleStr;
+    TextView taskDescription;
+    TextView taskState;
 
 
     @Override
@@ -21,14 +23,34 @@ public class TaskDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_task_details);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent callingIntent = getIntent();
-        if (callingIntent != null)
-            taskTitleStr = callingIntent.getStringExtra(MainActivity.TASK_TAG);
+        String taskTitleStr = callingIntent.getStringExtra(MainActivity.TASK_TAG);
+        String taskDescriptionStr = callingIntent.getStringExtra("taskDescription");
+        String taskStateStr = callingIntent.getStringExtra("taskState");
+
         taskTitle = findViewById(R.id.textViewTitle);
-        if ((taskTitleStr != null))
+        taskDescription = findViewById(R.id.textViewDescription);
+        taskState = findViewById(R.id.textViewState);
+
+        if (taskTitleStr != null) {
             taskTitle.setText(taskTitleStr);
-        else
+        } else {
             taskTitle.setText("Not Specified");
+        }
+
+        if (taskDescriptionStr != null) {
+            taskDescription.setText("Description: " + taskDescriptionStr);
+        } else {
+            taskDescription.setText("Description: Not Specified");
+        }
+
+        if (taskStateStr != null) {
+            taskState.setText("State: " + taskStateStr);
+        } else {
+            taskState.setText("State: Not Specified");
+        }
     }
+
+
 
 
     @Override
