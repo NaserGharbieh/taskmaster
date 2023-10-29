@@ -1,11 +1,17 @@
 package com.example.taskmaster.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Task {
+    @PrimaryKey(autoGenerate = true)
+    public Long id;
     private String title;
     private String body;
-    private TaskState state;
+    private TaskStateEnum state;
 
-    public Task(String title, String body, TaskState state) {
+    public Task(String title, String body, TaskStateEnum state) {
         this.title = title;
         this.body = body;
         this.state = state;
@@ -27,11 +33,11 @@ public class Task {
         this.body = body;
     }
 
-    public TaskState getState() {
+    public TaskStateEnum getState() {
         return state;
     }
 
-    public void setState(TaskState state) {
+    public void setState(TaskStateEnum state) {
         this.state = state;
     }
 

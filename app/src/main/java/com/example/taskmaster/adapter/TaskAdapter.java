@@ -32,8 +32,7 @@ import java.util.List;
         public void onBindViewHolder(@NonNull TaskViewHolder holder, int position) {
             Task task = taskList.get(position);
             holder.taskTitle.setText(task.getTitle());
-            holder.taskBody.setText(task.getBody());
-            holder.taskState.setText(task.getState().toString());
+
         }
 
         @Override
