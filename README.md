@@ -5,7 +5,7 @@
 |:---:|:---:|
 | ![homepage](./screenshots/homelab29.png) | ![alltasks](./screenshots/AllTasks.png) |
 | Add Task | Added Task |
-| ![addtask](./screenshots/AddTask.png) | ![addedtask](./screenshots/TaskAdded.png) |
+| ![addtask](./screenshots/AddTasklab29.png) | ![addedtask](./screenshots/TaskAddedlab29.png) |
 | user Settings | username Saved |
 | ![user Settings](./screenshots/userSettings.png) | ![userName Saved](./screenshots/userNameSaved.png) |
 | Select task from Homepage | Task Details |
