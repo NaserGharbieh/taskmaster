@@ -53,3 +53,9 @@ Task master mobile application with three pages:
 1. Set up Room, and modify Task class to be an Entity.
 2. Modify Add Task form to save the data entered in as a Task in local database.
 3. Refactor homepage RecyclerView to display all Task entities from database.
+
+- Lab31
+1. Did Espresso tests for these Activities :
+   - Main Activity.
+   - user Settings/profile .
+   - Add Task.
