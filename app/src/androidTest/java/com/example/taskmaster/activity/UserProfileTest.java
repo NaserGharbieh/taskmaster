@@ -4,10 +4,14 @@ package com.example.taskmaster.activity;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.pressImeActionButton;
+import static androidx.test.espresso.action.ViewActions.replaceText;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withParent;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
@@ -50,7 +54,7 @@ public class UserProfileTest {
         appCompatImageButton.perform(click());
 
         ViewInteraction appCompatEditText = onView(
-                allOf(withId(R.id.usernameEditText), withText("Naser Gharbieh"),
+                allOf(withId(R.id.usernameEditText),
                         childAtPosition(
                                 allOf(withId(R.id.userSettingsActivity),
                                         childAtPosition(
@@ -58,7 +62,18 @@ public class UserProfileTest {
                                                 0)),
                                 1),
                         isDisplayed()));
-        appCompatEditText.perform(pressImeActionButton());
+        appCompatEditText.perform(replaceText("Naser"), closeSoftKeyboard());
+
+        ViewInteraction appCompatEditText2 = onView(
+                allOf(withId(R.id.usernameEditText), withText("Naser"),
+                        childAtPosition(
+                                allOf(withId(R.id.userSettingsActivity),
+                                        childAtPosition(
+                                                withId(android.R.id.content),
+                                                0)),
+                                1),
+                        isDisplayed()));
+        appCompatEditText2.perform(pressImeActionButton());
 
         ViewInteraction materialButton = onView(
                 allOf(withId(R.id.addUsernameButton), withText("Add Username"),
@@ -72,6 +87,12 @@ public class UserProfileTest {
         materialButton.perform(click());
 
         pressBack();
+
+        ViewInteraction textView = onView(
+                allOf(withId(R.id.userTasks), withText("Naser's tasks "),
+                        withParent(withParent(withId(android.R.id.content))),
+                        isDisplayed()));
+        textView.check(matches(withText("Naser's tasks ")));
     }
 
     private static Matcher<View> childAtPosition(

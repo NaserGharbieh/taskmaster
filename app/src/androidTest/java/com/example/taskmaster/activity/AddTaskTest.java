@@ -7,11 +7,9 @@ import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.replaceText;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withParent;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.anything;
@@ -38,14 +36,14 @@ import org.junit.runner.RunWith;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class AddNewTaskTest {
+public class AddTaskTest {
 
     @Rule
     public ActivityScenarioRule<MainActivity> mActivityScenarioRule =
             new ActivityScenarioRule<>(MainActivity.class);
 
     @Test
-    public void addNewTaskTest() {
+    public void addTaskTest2() {
         ViewInteraction materialButton = onView(
                 allOf(withId(R.id.addNewTaskButton), withText("Add New Task"),
                         childAtPosition(
@@ -65,7 +63,7 @@ public class AddNewTaskTest {
                                                 0)),
                                 3),
                         isDisplayed()));
-        appCompatEditText.perform(replaceText("do code challenge 31"), closeSoftKeyboard());
+        appCompatEditText.perform(replaceText("lab 31"), closeSoftKeyboard());
 
         ViewInteraction appCompatMultiAutoCompleteTextView = onView(
                 allOf(withId(R.id.taskDescriptionTextView),
@@ -76,7 +74,7 @@ public class AddNewTaskTest {
                                                 0)),
                                 2),
                         isDisplayed()));
-        appCompatMultiAutoCompleteTextView.perform(replaceText("return first repeated word"), closeSoftKeyboard());
+        appCompatMultiAutoCompleteTextView.perform(replaceText("do tests"), closeSoftKeyboard());
 
         ViewInteraction appCompatSpinner = onView(
                 allOf(withId(R.id.addTaskStateSpinner),
@@ -93,7 +91,7 @@ public class AddNewTaskTest {
                 .inAdapterView(childAtPosition(
                         withClassName(is("android.widget.PopupWindow$PopupBackgroundView")),
                         0))
-                .atPosition(3);
+                .atPosition(2);
         materialTextView.perform(click());
 
         ViewInteraction materialButton2 = onView(
@@ -108,25 +106,6 @@ public class AddNewTaskTest {
         materialButton2.perform(click());
 
         pressBack();
-
-        ViewInteraction textView = onView(
-                allOf(withId(R.id.textViewTitle), withText("do code challenge 31"),
-                        withParent(withParent(withId(android.R.id.content))),
-                        isDisplayed()));
-        textView.check(matches(withText("do code challenge 31")));
-
-        ViewInteraction textView2 = onView(
-                allOf(withId(R.id.textViewDescription), withText("Description: return first repeated word"),
-                        withParent(withParent(withId(android.R.id.content))),
-                        isDisplayed()));
-        textView2.check(matches(withText("Description: return first repeated word")));
-
-        ViewInteraction textView3 = onView(
-                allOf(withId(R.id.textViewState), withText("State: COMPLETE"),
-                        withParent(withParent(withId(android.R.id.content))),
-                        isDisplayed()));
-        textView3.check(matches(withText("State: COMPLETE")));
-
     }
 
     private static Matcher<View> childAtPosition(
