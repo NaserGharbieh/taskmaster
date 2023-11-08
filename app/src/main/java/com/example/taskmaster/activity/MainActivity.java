@@ -12,14 +12,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
+
 
 import com.example.taskmaster.R;
 import com.example.taskmaster.adapter.RecyclerItemClickListener;
 import com.example.taskmaster.adapter.TaskAdapter;
-import com.example.taskmaster.database.TaskMasterDatabase;
 import com.example.taskmaster.model.Task;
-import com.example.taskmaster.model.TaskStateEnum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +27,7 @@ public  class MainActivity extends AppCompatActivity {
     private List<Task> taskList = new ArrayList<>();
     public static final String TASK_TAG="taskName";
     public static final String DATABASE_NAME="task_master";
-    TaskMasterDatabase taskMasterDatabase;
+
     TaskAdapter taskAdapter;
 
     @Override
@@ -81,14 +79,6 @@ public  class MainActivity extends AppCompatActivity {
                 })
         );
 
-        taskMasterDatabase= Room.databaseBuilder(
-                getApplicationContext(),
-                TaskMasterDatabase.class,
-                 DATABASE_NAME)
-                .fallbackToDestructiveMigration()
-                .allowMainThreadQueries()
-                .build();
-        taskMasterDatabase.taskDao().findAll();
 
 
 
@@ -105,9 +95,9 @@ public  class MainActivity extends AppCompatActivity {
 
         String name = sp.getString(UserSettingsActivity.USERNAME_TAG, "no name");
         userTasks.setText(name.isEmpty() ? "tasks" : name + "'s tasks ");
-        taskList.clear();
-        taskList.addAll(taskMasterDatabase.taskDao().findAll());
-        taskAdapter.notifyDataSetChanged();
+//        taskList.clear();
+//        taskList.addAll(taskMasterDatabase.taskDao().findAll());
+//        taskAdapter.notifyDataSetChanged();
 
     }
 

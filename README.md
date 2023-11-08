@@ -59,3 +59,8 @@ Task master mobile application with three pages:
    - Main Activity.
    - user Settings/profile .
    - Add Task.
+
+- Lab32
+1. Remove room form these Activities :
+   - Main Activity. .
+   - Add Task.

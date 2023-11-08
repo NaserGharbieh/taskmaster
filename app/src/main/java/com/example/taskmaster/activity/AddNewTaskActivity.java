@@ -1,12 +1,11 @@
 package com.example.taskmaster.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
+
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,12 +13,11 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.taskmaster.R;
-import com.example.taskmaster.database.TaskMasterDatabase;
 import com.example.taskmaster.model.Task;
 import com.example.taskmaster.model.TaskStateEnum;
 
 public class AddNewTaskActivity extends AppCompatActivity {
-    TaskMasterDatabase taskMasterDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +28,8 @@ public class AddNewTaskActivity extends AppCompatActivity {
 
 
 
-        taskMasterDatabase= Room.databaseBuilder(
-                        getApplicationContext(),
-                        TaskMasterDatabase.class,
-                        "task_master")
-                .fallbackToDestructiveMigration()
-                .allowMainThreadQueries()
-                .build();
-        taskMasterDatabase.taskDao().findAll();
+
+      //  taskMasterDatabase.taskDao().findAll();
         Spinner taskStateSpinner=(Spinner) findViewById(R.id.addTaskStateSpinner);
         taskStateSpinner.setAdapter(new ArrayAdapter<>(
                 this,
@@ -50,7 +42,8 @@ public class AddNewTaskActivity extends AppCompatActivity {
                     (  (EditText)  findViewById(R.id.taskNameEditText)).getText().toString(),
                     (  (EditText)  findViewById(R.id.taskDescriptionTextView)).getText().toString(),
                     TaskStateEnum.formString(taskStateSpinner.getSelectedItem().toString())   );
-            taskMasterDatabase.taskDao().insertATask(newtask);
+            // TODo: Change to graph ql
+        //    taskMasterDatabase.taskDao().insertATask(newtask);
 
 
             taskAddedToast.show();
