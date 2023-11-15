@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -12,24 +13,26 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
 
+
+import com.amplifyframework.api.graphql.model.ModelQuery;
+import com.amplifyframework.core.Amplify;
+import com.amplifyframework.datastore.generated.model.Task;
+import com.amplifyframework.datastore.generated.model.TaskStateEnum;
 import com.example.taskmaster.R;
 import com.example.taskmaster.adapter.RecyclerItemClickListener;
 import com.example.taskmaster.adapter.TaskAdapter;
-import com.example.taskmaster.database.TaskMasterDatabase;
-import com.example.taskmaster.model.Task;
-import com.example.taskmaster.model.TaskStateEnum;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public  class MainActivity extends AppCompatActivity {
+    public static final String TAG="MainActivity";
     SharedPreferences sp;
     private List<Task> taskList = new ArrayList<>();
     public static final String TASK_TAG="taskName";
     public static final String DATABASE_NAME="task_master";
-    TaskMasterDatabase taskMasterDatabase;
+
     TaskAdapter taskAdapter;
 
     @Override
@@ -60,6 +63,27 @@ public  class MainActivity extends AppCompatActivity {
             Intent goToUserSettings = new Intent(MainActivity.this, UserSettingsActivity.class);
             startActivity(goToUserSettings);
         });
+//        taskList.add(new Task("JAVA Tasks", "Task 1 description", TaskStateEnum.NEW));
+//        taskList.add(new Task("Re design", "Try to make the main activity more appealing", TaskStateEnum.ASSIGNED));
+//        taskList.add(new Task("Study DSA", "Task 3 description", TaskStateEnum.IN_PROGRESS));
+//        taskList.add(new Task("revise recursion ", "revise recursion and how it's used in trees with DFS and BFS", TaskStateEnum.NEW));
+        Amplify.API.query(
+                ModelQuery.list(Task.class),
+                success ->
+                {
+                    Log.i(TAG, "Read Tasks successfully");
+                    //products = new ArrayList<>();
+                    taskList.clear();
+                    for (Task databaseTask : success.getData()){
+                        taskList.add(databaseTask);
+                    }
+                    //adapter.notifyDataSetChanged();
+                    runOnUiThread(() ->{
+                        taskAdapter.notifyDataSetChanged();
+                    });
+                },
+                failure -> Log.i(TAG, "Did not read Tasks successfully")
+        );
 
 
 
@@ -76,19 +100,12 @@ public  class MainActivity extends AppCompatActivity {
                         detailIntent.putExtra(TASK_TAG, task.getTitle());
                         detailIntent.putExtra("taskDescription", task.getBody());  // Pass description
                         detailIntent.putExtra("taskState", task.getState().name()); // Pass state
+//                        detailIntent.putExtra("taskDate", task.getDateCreated().toString()); // Pass state
                         startActivity(detailIntent);
                     }
                 })
         );
 
-        taskMasterDatabase= Room.databaseBuilder(
-                getApplicationContext(),
-                TaskMasterDatabase.class,
-                 DATABASE_NAME)
-                .fallbackToDestructiveMigration()
-                .allowMainThreadQueries()
-                .build();
-        taskMasterDatabase.taskDao().findAll();
 
 
 
@@ -105,9 +122,7 @@ public  class MainActivity extends AppCompatActivity {
 
         String name = sp.getString(UserSettingsActivity.USERNAME_TAG, "no name");
         userTasks.setText(name.isEmpty() ? "tasks" : name + "'s tasks ");
-        taskList.clear();
-        taskList.addAll(taskMasterDatabase.taskDao().findAll());
-        taskAdapter.notifyDataSetChanged();
+
 
     }
 
