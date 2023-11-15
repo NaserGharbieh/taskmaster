@@ -5,15 +5,15 @@
 |:---:|:---:|
 | ![homepage](./screenshots/homelab29.png) | ![alltasks](./screenshots/AllTasks.png) |
 | Add Task | Added Task |
-| ![addtask](./screenshots/AddTasklab29.png) | ![addedtask](./screenshots/TaskAddedlab29.png) |
+| ![addtask](./screenshots/AddTasklab32.png) | ![addedtask](./screenshots/TaskAddedlab32.png) |
 | user Settings | username Saved |
 | ![user Settings](./screenshots/userSettings.png) | ![userName Saved](./screenshots/userNameSaved.png) |
 | Select task from Homepage | Task Details |
-| ![Task Selected](./screenshots/homelab29.png) | ![Task Details](./screenshots/TaskDetailslab29.png) |
+| ![Task Selected](./screenshots/homelab32.png) | ![Task Details](./screenshots/TaskDetailslab32.png) |
 
-| RoomDbWorking |
+| DynamoDB Working |
 |:---:| 
-| ![Task Selected](./screenshots/RoomDbWorking.png) |
+| ![Task Selected](./screenshots/DynamoDBWorking.png) |
 
 ## description
 Task master mobile application with three pages:
@@ -61,6 +61,9 @@ Task master mobile application with three pages:
    - Add Task.
 
 - Lab32
-1. Remove room form these Activities :
-   - Main Activity. .
+1. Remove Room dependencies and room connections from the application.
+2. Remove Room form these Activities :
+   - Main Activity. 
    - Add Task.
+3. Added Amplify to the project successfully
+4. Saving tasks in Dynamo db (Add Task Activity) and showing (retrieve) them in the main Activity.
