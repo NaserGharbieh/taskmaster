@@ -15,4 +15,5 @@
     <string name="java_tasks">java tasks</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada nibh sit amet massa fermentum, eget consequat sapien malesuada.</string>
     <string name="task_state">Task State</string>
+    <string name="task_team">Task Team</string>
 </resources>

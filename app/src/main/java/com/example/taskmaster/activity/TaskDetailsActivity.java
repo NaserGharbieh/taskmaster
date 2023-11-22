@@ -15,6 +15,7 @@ public class TaskDetailsActivity extends AppCompatActivity {
     String taskTitleStr;
     TextView taskDescription;
     TextView taskState;
+    TextView taskTeam;
 
 
     @Override
@@ -26,10 +27,11 @@ public class TaskDetailsActivity extends AppCompatActivity {
         String taskTitleStr = callingIntent.getStringExtra(MainActivity.TASK_TAG);
         String taskDescriptionStr = callingIntent.getStringExtra("taskDescription");
         String taskStateStr = callingIntent.getStringExtra("taskState");
-
+        String taskTeamStr =callingIntent.getStringExtra("taskTeam");
         taskTitle = findViewById(R.id.textViewTitle);
         taskDescription = findViewById(R.id.textViewDescription);
         taskState = findViewById(R.id.textViewState);
+         taskTeam = findViewById(R.id.textViewTeam);
 
         if (taskTitleStr != null) {
             taskTitle.setText(taskTitleStr);
@@ -47,6 +49,11 @@ public class TaskDetailsActivity extends AppCompatActivity {
             taskState.setText("State: " + taskStateStr);
         } else {
             taskState.setText("State: Not Specified");
+        }
+        if (taskTeamStr != null) {
+            taskTeam.setText("Team: " + taskTeamStr);
+        } else {
+            taskTeam.setText("Team : Not Specified");
         }
     }
 

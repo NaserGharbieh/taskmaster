@@ -7,12 +7,19 @@ type Todo @model {
   name: String!
   description: String
 }
+
+# After you change this file do these steps:
+# 1. on the command line, type " amplify codegen models"
+# 2. "amplify api update -> Disable conflict resolution
+# 3. "amplify push"
 type Task @model @auth(rules: [{allow: public}]){
    id: ID!
    title: String!
    body:  String
    dateCreated :AWSDateTime
    state : TaskStateEnum
+    teamId: ID! @index(name: "ownedBy", sortKeyFields: ["title"])
+    taskOwnedByTeam: Team @belongsTo(fields: ["teamId"])
 }
 
 enum  TaskStateEnum {
@@ -21,4 +28,10 @@ ASSIGNED
 IN_PROGRESS
 COMPLETE
 
+}
+type Team @model @auth(rules: [{allow: public}])
+{
+    id: ID!
+    name: String!
+    tasks: [Task] @hasMany(indexName: "ownedBy", fields: ["id"])
 }
