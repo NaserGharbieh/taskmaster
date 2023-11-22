@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".activity.AddNewTaskActivity">
 
+    <Spinner
+        android:id="@+id/addTaskTeamSpinner"
+        android:layout_width="312dp"
+        android:layout_height="82dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/addTaskButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTaskTeamTextView"
+        app:layout_constraintVertical_bias="0.5" />
+
     <TextView
         android:id="@+id/myTaskstextView"
         android:layout_width="182dp"
@@ -17,10 +29,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.445"
+        app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintVertical_bias="0.02" />
 
     <Button
         android:id="@+id/addTaskButton"
@@ -44,15 +56,16 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.367" />
+        app:layout_constraintVertical_bias="0.259" />
 
     <EditText
         android:id="@+id/taskNameEditText"
         android:layout_width="236dp"
         android:layout_height="57dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="50dp"
         android:autofillHints="do it"
         android:ems="10"
         android:hint="@string/task_title"
@@ -60,7 +73,7 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/taskDescriptionTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
@@ -69,10 +82,10 @@
         android:layout_height="82dp"
         app:layout_constraintBottom_toTopOf="@+id/addTaskButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintHorizontal_bias="0.629"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addTasksTextView"
-        app:layout_constraintVertical_bias="0.41" />
+        app:layout_constraintVertical_bias="0.088" />
 
     <TextView
         android:id="@+id/addTasksTextView"
@@ -84,9 +97,24 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.554"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54" />
+        app:layout_constraintVertical_bias="0.419" />
+
+    <TextView
+        android:id="@+id/addTaskTeamTextView"
+        android:layout_width="182dp"
+        android:layout_height="44dp"
+
+        android:text="@string/task_team"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.62" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

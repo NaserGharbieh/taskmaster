@@ -5,15 +5,16 @@
 |:---:|:---:|
 | ![homepage](./screenshots/homelab29.png) | ![alltasks](./screenshots/AllTasks.png) |
 | Add Task | Added Task |
-| ![addtask](./screenshots/AddTasklab32.png) | ![addedtask](./screenshots/TaskAddedlab32.png) |
+| ![addtask](./screenshots/AddTasklab33.png) | ![addedtask](./screenshots/TaskAddedlab33.png) |
 | user Settings | username Saved |
 | ![user Settings](./screenshots/userSettings.png) | ![userName Saved](./screenshots/userNameSaved.png) |
 | Select task from Homepage | Task Details |
-| ![Task Selected](./screenshots/homelab32.png) | ![Task Details](./screenshots/TaskDetailslab32.png) |
+| ![Task Selected](./screenshots/homelab33.png) | ![Task Details](./screenshots/TaskDetailslab33.png) |
 
 | DynamoDB Working |
 |:---:| 
-| ![Task Selected](./screenshots/DynamoDBWorking.png) |
+| ![Dynamo DB Working 33](./screenshots/DynamoDBWorking33.png) |
+| ![Dynamo DB Working 33](./screenshots/DynamoDBWorking33Teams.png) |
 
 ## description
 Task master mobile application with three pages:
@@ -67,3 +68,7 @@ Task master mobile application with three pages:
    - Add Task.
 3. Added Amplify to the project successfully
 4. Saving tasks in Dynamo db (Add Task Activity) and showing (retrieve) them in the main Activity.
+
+- Lab33
+1. Create Team model and associate it with the Task (one team `has many` tasks,  task  `ownedBy` team).
+2. Choose the team associated when creating a task, and filter the tasks on the main activity based on team.

@@ -5,8 +5,8 @@
     "serviceName": "AppSync",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "expirationTime": 300,
-      "apiKeyExpirationDate": "2024-09-08T09:46:46.514Z",
+      "expirationTime": 60,
+      "apiKeyExpirationDate": "2024-01-18T01:00:42.058Z",
       "keyDescription": "this API key goal is to genarate models in the cloud and it's from lab-32 "
     },
     "conflictResolution": {},

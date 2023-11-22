@@ -15,10 +15,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.amplifyframework.api.graphql.model.ModelMutation;
 import com.amplifyframework.api.graphql.model.ModelQuery;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.generated.model.Task;
 import com.amplifyframework.datastore.generated.model.TaskStateEnum;
+import com.amplifyframework.datastore.generated.model.Team;
 import com.example.taskmaster.R;
 import com.example.taskmaster.adapter.RecyclerItemClickListener;
 import com.example.taskmaster.adapter.TaskAdapter;
@@ -67,23 +69,48 @@ public  class MainActivity extends AppCompatActivity {
 //        taskList.add(new Task("Re design", "Try to make the main activity more appealing", TaskStateEnum.ASSIGNED));
 //        taskList.add(new Task("Study DSA", "Task 3 description", TaskStateEnum.IN_PROGRESS));
 //        taskList.add(new Task("revise recursion ", "revise recursion and how it's used in trees with DFS and BFS", TaskStateEnum.NEW));
-        Amplify.API.query(
-                ModelQuery.list(Task.class),
-                success ->
-                {
-                    Log.i(TAG, "Read Tasks successfully");
-                    //products = new ArrayList<>();
-                    taskList.clear();
-                    for (Task databaseTask : success.getData()){
-                        taskList.add(databaseTask);
-                    }
-                    //adapter.notifyDataSetChanged();
-                    runOnUiThread(() ->{
-                        taskAdapter.notifyDataSetChanged();
-                    });
-                },
-                failure -> Log.i(TAG, "Did not read Tasks successfully")
-        );
+
+//        Team finalProjectTeam=Team.builder()
+//                        .name("Final Project Team")
+//                                .build();
+//        Team DSA_Team=Team.builder()
+//                        .name("DSA Team ")
+//                                .build();
+//        Team jobSearchTeam=Team.builder()
+//                        .name("Job Search Team")
+//                                .build();
+//        Amplify.API.mutate(
+//               ModelMutation.create(finalProjectTeam),
+//               successResponse -> Log.i(TAG, "MainActivity.onCreate(): Team made successfully"),
+//               failureResponse -> Log.i(TAG, "MainActivity.onCreate(): Team creation failed with this response: "+failureResponse)
+//       );
+//        Amplify.API.mutate(
+//               ModelMutation.create(DSA_Team),
+//               successResponse -> Log.i(TAG, "MainActivity.onCreate(): Team made successfully"),
+//               failureResponse -> Log.i(TAG, "MainActivity.onCreate(): Team creation failed with this response: "+failureResponse)
+//       ); Amplify.API.mutate(
+//               ModelMutation.create(jobSearchTeam),
+//               successResponse -> Log.i(TAG, "MainActivity.onCreate(): Team made successfully"),
+//               failureResponse -> Log.i(TAG, "MainActivity.onCreate(): Team creation failed with this response: "+failureResponse)
+//       );
+
+//        Amplify.API.query(
+//                ModelQuery.list(Task.class),
+//                success ->
+//                {
+//                    Log.i(TAG, "Read Tasks successfully");
+//                    //products = new ArrayList<>();
+//                    taskList.clear();
+//                    for (Task databaseTask : success.getData()){
+//                        taskList.add(databaseTask);
+//                    }
+//                    //adapter.notifyDataSetChanged();
+//                    runOnUiThread(() ->{
+//                        taskAdapter.notifyDataSetChanged();
+//                    });
+//                },
+//                failure -> Log.i(TAG, "Did not read Tasks successfully")
+//        );
 
 
 
@@ -100,7 +127,7 @@ public  class MainActivity extends AppCompatActivity {
                         detailIntent.putExtra(TASK_TAG, task.getTitle());
                         detailIntent.putExtra("taskDescription", task.getBody());  // Pass description
                         detailIntent.putExtra("taskState", task.getState().name()); // Pass state
-//                        detailIntent.putExtra("taskDate", task.getDateCreated().toString()); // Pass state
+                        detailIntent.putExtra("taskTeam", task.getTaskOwnedByTeam().getName()); // Pass Team
                         startActivity(detailIntent);
                     }
                 })
@@ -122,8 +149,29 @@ public  class MainActivity extends AppCompatActivity {
 
         String name = sp.getString(UserSettingsActivity.USERNAME_TAG, "no name");
         userTasks.setText(name.isEmpty() ? "tasks" : name + "'s tasks ");
+        Amplify.API.query(
+                ModelQuery.list(Task.class),
+                success ->
+                {
+                    Log.i(TAG, "Read Tasks successfully");
+                    //products = new ArrayList<>();
+                    taskList.clear();
+                    for (Task databaseTask : success.getData()){
+                        taskList.add(databaseTask);
+                    }
+                    //adapter.notifyDataSetChanged();
+                    runOnUiThread(() ->{
+                        taskAdapter.notifyDataSetChanged();
+                    });
+                },
+                failure -> Log.i(TAG, "Did not read Tasks successfully")
+        );
 
 
+    }
+    private void init() {
+        sp= PreferenceManager.getDefaultSharedPreferences(this);
+        taskList = new ArrayList<>();
     }
 
 }
