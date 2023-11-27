@@ -30,6 +30,7 @@ import java.util.List;
 
 public  class MainActivity extends AppCompatActivity {
     public static final String TAG="MainActivity";
+    public static final String TASK_ID_TAG="TASK Id TAG";
     SharedPreferences sp;
     private List<Task> taskList = new ArrayList<>();
     public static final String TASK_TAG="taskName";
@@ -65,52 +66,6 @@ public  class MainActivity extends AppCompatActivity {
             Intent goToUserSettings = new Intent(MainActivity.this, UserSettingsActivity.class);
             startActivity(goToUserSettings);
         });
-//        taskList.add(new Task("JAVA Tasks", "Task 1 description", TaskStateEnum.NEW));
-//        taskList.add(new Task("Re design", "Try to make the main activity more appealing", TaskStateEnum.ASSIGNED));
-//        taskList.add(new Task("Study DSA", "Task 3 description", TaskStateEnum.IN_PROGRESS));
-//        taskList.add(new Task("revise recursion ", "revise recursion and how it's used in trees with DFS and BFS", TaskStateEnum.NEW));
-
-//        Team finalProjectTeam=Team.builder()
-//                        .name("Final Project Team")
-//                                .build();
-//        Team DSA_Team=Team.builder()
-//                        .name("DSA Team ")
-//                                .build();
-//        Team jobSearchTeam=Team.builder()
-//                        .name("Job Search Team")
-//                                .build();
-//        Amplify.API.mutate(
-//               ModelMutation.create(finalProjectTeam),
-//               successResponse -> Log.i(TAG, "MainActivity.onCreate(): Team made successfully"),
-//               failureResponse -> Log.i(TAG, "MainActivity.onCreate(): Team creation failed with this response: "+failureResponse)
-//       );
-//        Amplify.API.mutate(
-//               ModelMutation.create(DSA_Team),
-//               successResponse -> Log.i(TAG, "MainActivity.onCreate(): Team made successfully"),
-//               failureResponse -> Log.i(TAG, "MainActivity.onCreate(): Team creation failed with this response: "+failureResponse)
-//       ); Amplify.API.mutate(
-//               ModelMutation.create(jobSearchTeam),
-//               successResponse -> Log.i(TAG, "MainActivity.onCreate(): Team made successfully"),
-//               failureResponse -> Log.i(TAG, "MainActivity.onCreate(): Team creation failed with this response: "+failureResponse)
-//       );
-
-//        Amplify.API.query(
-//                ModelQuery.list(Task.class),
-//                success ->
-//                {
-//                    Log.i(TAG, "Read Tasks successfully");
-//                    //products = new ArrayList<>();
-//                    taskList.clear();
-//                    for (Task databaseTask : success.getData()){
-//                        taskList.add(databaseTask);
-//                    }
-//                    //adapter.notifyDataSetChanged();
-//                    runOnUiThread(() ->{
-//                        taskAdapter.notifyDataSetChanged();
-//                    });
-//                },
-//                failure -> Log.i(TAG, "Did not read Tasks successfully")
-//        );
 
 
 
@@ -123,8 +78,8 @@ public  class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(View view, int position) {
                         Task task = taskList.get(position);
-                        Intent detailIntent = new Intent(MainActivity.this, TaskDetailsActivity.class);
-                        detailIntent.putExtra(TASK_TAG, task.getTitle());
+                        Intent detailIntent = new Intent(MainActivity.this, EditTaskActivity.class);
+                        detailIntent.putExtra(TASK_ID_TAG, task.getId());
                         detailIntent.putExtra("taskDescription", task.getBody());  // Pass description
                         detailIntent.putExtra("taskState", task.getState().name()); // Pass state
                         detailIntent.putExtra("taskTeam", task.getTaskOwnedByTeam().getName()); // Pass Team
@@ -138,7 +93,7 @@ public  class MainActivity extends AppCompatActivity {
 
 
 
-
+        goToEditTask();
 }
 
     @Override
@@ -172,6 +127,14 @@ public  class MainActivity extends AppCompatActivity {
     private void init() {
         sp= PreferenceManager.getDefaultSharedPreferences(this);
         taskList = new ArrayList<>();
+    }
+    private void goToEditTask() {
+        ImageButton editTasksImageButton = (ImageButton) findViewById(R.id.editTasksImageButton);
+        editTasksImageButton.setOnClickListener(view -> {
+            Intent goToEditTask = new Intent(MainActivity.this, EditTaskActivity.class);
+            startActivity(goToEditTask);
+        });
+
     }
 
 }

@@ -33,7 +33,7 @@ public class AddNewTaskActivity extends AppCompatActivity {
     public static final String TAG = "AddNewTaskActivity";
     Spinner teamSpinner = null;
     Spinner taskStateSpinner = null;
-    CompletableFuture<List<Team>> teamFuture = new CompletableFuture<>();
+  private   CompletableFuture<List<Team>> teamFuture = new CompletableFuture<>();
 
 
     @Override

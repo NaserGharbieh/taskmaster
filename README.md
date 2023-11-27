@@ -3,13 +3,19 @@
 
 | Homepage | All Tasks |
 |:---:|:---:|
-| ![homepage](./screenshots/homelab29.png) | ![alltasks](./screenshots/AllTasks.png) |
+| ![homepage](./screenshots/homelab34.png) | ![alltasks](./screenshots/AllTasks.png) |
 | Add Task | Added Task |
 | ![addtask](./screenshots/AddTasklab33.png) | ![addedtask](./screenshots/TaskAddedlab33.png) |
 | user Settings | username Saved |
 | ![user Settings](./screenshots/userSettings.png) | ![userName Saved](./screenshots/userNameSaved.png) |
-| Select task from Homepage | Task Details |
-| ![Task Selected](./screenshots/homelab33.png) | ![Task Details](./screenshots/TaskDetailslab33.png) |
+| Select task from Homepage | Task Edit |
+| ![Task Selected](./screenshots/TaskSelected34.png) | ![Task Details](./screenshots/EditTasklab34.png) | 
+| Task Updated | Task Edited AWS |
+| ![Task Updated](./screenshots/TaskEditedlab34.png) | ![Task Edited AWS](./screenshots/TaskEditedlab34AWS.png) |
+| Select task from Homepage to delete | Task Edit |
+| ![Task Selected For Delete](./screenshots/TaskSelectedForDelete34.png) | ![Task Details](./screenshots/TaskDeleated34.png) | 
+| home After Deletion |  |
+| ![Task Deleated](./screenshots/homelab34AfterDeletion.png) |  |
 
 | DynamoDB Working |
 |:---:| 
@@ -17,7 +23,7 @@
 | ![Dynamo DB Working 33](./screenshots/DynamoDBWorking33Teams.png) |
 
 ## description
-Task master mobile application with three pages:
+Task master mobile application with six pages:
 1. home page with two buttons and image:
   - Add new Task Button
   - All Tasks Button
@@ -38,6 +44,9 @@ Task master mobile application with three pages:
   - task title based on the clicked task.
   - task description.
   - task state.
+6. Edit task page:
+   - Update any selected task Attributes from the main Activity.
+   - Delete any selected task  from the main Activity.  
 
 ## daily change log
 - Lab27
@@ -72,3 +81,8 @@ Task master mobile application with three pages:
 - Lab33
 1. Create Team model and associate it with the Task (one team `has many` tasks,  task  `ownedBy` team).
 2. Choose the team associated when creating a task, and filter the tasks on the main activity based on team.
+
+- Lab 34
+1. Created edit task Activity were the user can :
+   - Update any selected task Attributes from the main Activity.
+   - Delete any selected task  from the main Activity.

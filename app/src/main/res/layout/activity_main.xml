@@ -55,6 +55,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <ImageButton
+        android:id="@+id/editTasksImageButton"
+        android:layout_width="77dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="300dp"
+        android:contentDescription="@string/user_profile"
+        android:src="@android:drawable/ic_menu_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="395dp"
