@@ -3,7 +3,7 @@
 
 | Homepage | All Tasks |
 |:---:|:---:|
-| ![homepage](./screenshots/homelab34.png) | ![alltasks](./screenshots/AllTasks.png) |
+| ![homepage](./screenshots/homelab36AfterLogin.png) | ![alltasks](./screenshots/AllTasks.png) |
 | Add Task | Added Task |
 | ![addtask](./screenshots/AddTasklab33.png) | ![addedtask](./screenshots/TaskAddedlab33.png) |
 | user Settings | username Saved |
@@ -20,7 +20,17 @@
 | DynamoDB Working |
 |:---:| 
 | ![Dynamo DB Working 33](./screenshots/DynamoDBWorking33.png) |
-| ![Dynamo DB Working 33](./screenshots/DynamoDBWorking33Teams.png) |
+| ![Dynamo DB Working 33](./screenshots/DynamoDBWorking33Teams.png) | 
+
+## Cognito Auth Workflow 
+| Homepage | login Before Signup |
+|:---:|:---:|
+| ![homepage before login](./screenshots/homelab36beforelogin.png) | ![login Before Signup](./screenshots/loginBforeSignup.png) |
+| Signup | verify |
+| ![signup](./screenshots/signup.png) | ![verify](./screenshots/verify.png) |
+| login after verify | home After Login |
+| ![login after verify](./screenshots/loginafterverify.png) | ![verify](./screenshots/homelab36AfterLogin.png) |
+
 
 ## description
 Task master mobile application with six pages:
@@ -86,3 +96,10 @@ Task master mobile application with six pages:
 1. Created edit task Activity were the user can :
    - Update any selected task Attributes from the main Activity.
    - Delete any selected task  from the main Activity.
+
+- Lab 36 : added Congnito project successfully
+1. Created  Activities to :
+   - Login .
+   - Signup.
+   - Verify Account.
+2. changed the Main (home) to sute the user.

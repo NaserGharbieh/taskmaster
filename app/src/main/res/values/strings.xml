@@ -19,4 +19,13 @@
     <string name="edit_task">Edit Task</string>
     <string name="delete_task">Delete Task</string>
     <string name="update">Update</string>
+    <string name="signup">Signup</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in">LOG IN</string>
+    <string name="verify_account">Verify Account</string>
+    <string name="verify">Verify</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="log_out">LOG OUT</string>
 </resources>
