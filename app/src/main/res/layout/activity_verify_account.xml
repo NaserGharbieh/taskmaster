@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.VerifyAccountActivity">
+
+    <TextView
+        android:id="@+id/verifyAccountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/verify_account"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/verifyAccountUsernameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/username"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verifyAccountTextView" />
+
+    <TextView
+        android:id="@+id/verifyAccountVerificatoinCodeTextView"
+        android:layout_width="80dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/verification_code"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verifyAccountUsernameTextView"
+        tools:ignore="TextSizeCheck" />
+
+    <EditText
+        android:id="@+id/verifyAccountUsernameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/username"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toEndOf="@+id/verifyAccountUsernameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/verifyAccountTextView"
+        tools:ignore="DuplicateSpeakableTextCheck"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/verifyAccountVerificatoinCodeEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/verification_code"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/verifyAccountVerificatoinCodeTextView"
+        app:layout_constraintTop_toBottomOf="@+id/verifyAccountUsernameEditText"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <Button
+        android:id="@+id/verifyAccountVerifyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/verify"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verifyAccountVerificatoinCodeTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
