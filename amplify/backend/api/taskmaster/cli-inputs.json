@@ -6,7 +6,7 @@
     "defaultAuthType": {
       "mode": "API_KEY",
       "expirationTime": 60,
-      "apiKeyExpirationDate": "2024-01-28T04:58:34.192Z",
+      "apiKeyExpirationDate": "2024-02-01T02:44:31.148Z",
       "keyDescription": "this API key goal is to genarate models in the cloud and it's from lab-32 "
     },
     "conflictResolution": {},

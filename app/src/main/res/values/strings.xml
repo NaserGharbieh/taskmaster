@@ -28,4 +28,6 @@
     <string name="verify">Verify</string>
     <string name="verification_code">Verification Code</string>
     <string name="log_out">LOG OUT</string>
+    <string name="add_task_image">Add task image</string>
+    <string name="delete_task_image">delete Task Image</string>
 </resources>

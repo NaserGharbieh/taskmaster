@@ -18,6 +18,7 @@ type Task @model @auth(rules: [{allow: public}]){
    body:  String
    dateCreated :AWSDateTime
    state : TaskStateEnum
+   taskImageS3Key:String
     teamId: ID! @index(name: "ownedBy", sortKeyFields: ["title"])
     taskOwnedByTeam: Team @belongsTo(fields: ["teamId"])
 }
