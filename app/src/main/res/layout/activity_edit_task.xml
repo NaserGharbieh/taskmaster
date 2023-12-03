@@ -4,25 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.EditTaskActivity">
+    tools:context=".activity.EditTaskActivity"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="17dp">
 
+
+    <ImageButton
+        android:id="@+id/editTasksImageImageButton"
+        android:layout_width="77dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="452dp"
+        android:contentDescription="@string/add_task_image"
+        android:src="@android:drawable/ic_menu_gallery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/editTaskDeleteImageImageButton"
+        android:layout_width="77dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="452dp"
+        android:contentDescription="@string/delete_task_image"
+        android:src="@android:drawable/ic_menu_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
     <Spinner
         android:id="@+id/editTaskTeamSpinner"
-        android:layout_width="312dp"
-        android:layout_height="82dp"
-        app:layout_constraintBottom_toTopOf="@+id/updateTaskButton"
+        android:layout_width="260dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/addTaskTeamTextView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.641"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addTaskTeamTextView3"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintStart_toEndOf="@+id/addTaskTeamTextView3"
+        app:layout_constraintTop_toTopOf="@+id/addTaskTeamTextView3" />
 
     <Button
         android:id="@+id/updateTaskButton"
-        android:layout_width="175dp"
-        android:layout_height="59dp"
-        android:layout_marginBottom="68dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="#009688"
         android:backgroundTint="#009688"
         android:text="@string/update"
@@ -31,51 +56,51 @@
         android:textStyle="bold"
         app:iconTint="@color/teal_700"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintEnd_toStartOf="@+id/deleteTaskButton"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTaskTeamSpinner"
-        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964"
         app:strokeColor="#009688"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
         android:id="@+id/deleteTaskButton"
-        android:layout_width="173dp"
-        android:layout_height="62dp"
-        android:layout_marginBottom="68dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
         android:background="#F44336"
         android:text="@string/delete_task"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold|italic"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTaskTeamSpinner"
-        app:layout_constraintVertical_bias="0.513"
-
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/updateTaskButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <MultiAutoCompleteTextView
         android:id="@+id/editTaskDescriptionTextView"
-        android:layout_width="265dp"
-        android:layout_height="138dp"
+        android:layout_width="210dp"
+        android:layout_height="65dp"
         android:hint="@string/task_description"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.279" />
+        app:layout_constraintVertical_bias="0.242" />
 
     <EditText
         android:id="@+id/editTaskNameEditText"
-        android:layout_width="236dp"
-        android:layout_height="57dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="217dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="20dp"
         android:autofillHints="do it"
         android:ems="10"
         android:hint="@string/task_title"
@@ -83,51 +108,79 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/editTaskDescriptionTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/editTaskStateSpinner"
-        android:layout_width="312dp"
-        android:layout_height="82dp"
-        app:layout_constraintBottom_toTopOf="@+id/addTaskTeamTextView3"
+        android:layout_width="260dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/addTasksTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addTasksTextView"
+        app:layout_constraintStart_toEndOf="@+id/addTasksTextView"
+        app:layout_constraintTop_toTopOf="@+id/addTasksTextView"
         app:layout_constraintVertical_bias="0.5" />
 
     <TextView
         android:id="@+id/addTasksTextView"
-        android:layout_width="198dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
         android:text="@string/task_state"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintBottom_toTopOf="@+id/editTaskStateSpinner"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editTaskStateSpinner"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTaskDescriptionTextView"
-        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.341"
         tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/addTaskTeamTextView3"
-        android:layout_width="182dp"
-        android:layout_height="44dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
+        android:layout_marginTop="52dp"
         android:text="@string/task_team"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintBottom_toTopOf="@+id/editTaskTeamSpinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toStartOf="@+id/editTaskTeamSpinner"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTaskStateSpinner"
-        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@+id/addTasksTextView"
         tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/addTaskTeamTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="16dp"
+        android:text="@string/add_task_image"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.521"
+        tools:ignore="MissingConstraints,TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/addTaskTeamTextView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="5dp"
+        android:text="@string/delete_task_image"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.521"
+        tools:ignore="MissingConstraints,TextSizeCheck" />
 
     <TextView
         android:id="@+id/myTaskstextView5"
@@ -144,6 +197,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="TextSizeCheck" />
+
+    <ImageView
+        android:id="@+id/editTaskImageImageView"
+        android:layout_width="183dp"
+        android:layout_height="159dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editTaskDeleteImageImageButton"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toEndOf="@+id/editTasksImageImageButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.674"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

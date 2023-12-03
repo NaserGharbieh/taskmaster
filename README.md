@@ -31,6 +31,16 @@
 | login after verify | home After Login |
 | ![login after verify](./screenshots/loginafterverify.png) | ![verify](./screenshots/homelab36AfterLogin.png) |
 
+## S3 Add task image Workflow 
+| Homepage | Add Task |
+|:---:|:---:|
+| ![home lab36 After Login](./screenshots/homelab36AfterLogin.png) | ![Task Added lab37](./screenshots/TaskAddedlab37.png) |
+| Edit task & Add task Image |pick Task Image  |
+| ![AddTaskImage37](./screenshots/AddTaskImage37.png) | ![verify](./screenshots/pickTaskImage37.png) |
+| Task Image Added |  |
+| ![AddTaskImage37](./screenshots/TaskImageAddedlab37.png) |  |
+| delete task Image| deleted task Image |
+| ![delete task Image](./screenshots/deleteTaskImage37.png) | ![deletedTaskImage37](./screenshots/deletedTaskImage37.png) |
 
 ## description
 Task master mobile application with six pages:
@@ -103,3 +113,9 @@ Task master mobile application with six pages:
    - Signup.
    - Verify Account.
 2. changed the Main (home) to sute the user.
+
+- Lab37 : Added S3 to project successfully
+
+ 1. In the Task Details Activity: allow th user to pick an image, **the picked image will be uploaded to S3 and attached with the task and rendered.**
+
+ 2. Update the Task model to include a image of type string.

@@ -317,6 +317,18 @@
                         "deprecationReason": null
                     },
                     {
+                        "name": "taskImageS3Key",
+                        "description": null,
+                        "args": [],
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "String",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
                         "name": "teamId",
                         "description": null,
                         "args": [],
@@ -3613,6 +3625,18 @@
                         "deprecationReason": null
                     },
                     {
+                        "name": "taskImageS3Key",
+                        "description": null,
+                        "type": {
+                            "kind": "INPUT_OBJECT",
+                            "name": "ModelStringInput",
+                            "ofType": null
+                        },
+                        "defaultValue": null,
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
                         "name": "teamId",
                         "description": null,
                         "type": {
@@ -3722,6 +3746,18 @@
                         "type": {
                             "kind": "INPUT_OBJECT",
                             "name": "ModelTaskStateEnumInput",
+                            "ofType": null
+                        },
+                        "defaultValue": null,
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "taskImageS3Key",
+                        "description": null,
+                        "type": {
+                            "kind": "INPUT_OBJECT",
+                            "name": "ModelStringInput",
                             "ofType": null
                         },
                         "defaultValue": null,
@@ -3861,6 +3897,18 @@
                         "deprecationReason": null
                     },
                     {
+                        "name": "taskImageS3Key",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "String",
+                            "ofType": null
+                        },
+                        "defaultValue": null,
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
                         "name": "teamId",
                         "description": null,
                         "type": {
@@ -3946,6 +3994,18 @@
                         "type": {
                             "kind": "ENUM",
                             "name": "TaskStateEnum",
+                            "ofType": null
+                        },
+                        "defaultValue": null,
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "taskImageS3Key",
+                        "description": null,
+                        "type": {
+                            "kind": "SCALAR",
+                            "name": "String",
                             "ofType": null
                         },
                         "defaultValue": null,
@@ -4054,6 +4114,18 @@
                     },
                     {
                         "name": "state",
+                        "description": null,
+                        "type": {
+                            "kind": "INPUT_OBJECT",
+                            "name": "ModelSubscriptionStringInput",
+                            "ofType": null
+                        },
+                        "defaultValue": null,
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "taskImageS3Key",
                         "description": null,
                         "type": {
                             "kind": "INPUT_OBJECT",

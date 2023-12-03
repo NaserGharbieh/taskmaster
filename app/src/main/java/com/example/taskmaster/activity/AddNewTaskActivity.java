@@ -139,6 +139,7 @@ private void setUpAddTaskButton(){
                 .dateCreated(new Temporal.DateTime(new Date(), 0))
                 .state((TaskStateEnum) taskStateSpinner.getSelectedItem())
                 .taskOwnedByTeam(selectedTeam)
+                .taskImageS3Key("")
                 .build();
 
         Amplify.API.mutate(
